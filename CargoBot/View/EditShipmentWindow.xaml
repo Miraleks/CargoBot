@@ -1,0 +1,68 @@
+﻿<Window x:Class="CargoBot.View.EditShipmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CargoBot.View"
+        mc:Ignorable="d"
+        Title="Изменить груз" Height="500" Width="400">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type TextBlock}" >
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="Margin" Value="10,0,20,0"/>
+            </Style>
+            <Style TargetType="{x:Type TextBox}" >
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="Margin" Value="20,0,20,0"/>
+            </Style>
+            <Style TargetType="{x:Type ComboBox}" >
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="Margin" Value="20,0,20,0"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Код клиента:"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Наименование"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Количество мест"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Вес, кг"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Объем, м3"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Ставка"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Дата поступления"/>
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Склад"/>
+
+        <TextBox Grid.Row="0" Grid.Column="1" Text=""/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text=""/>
+        <TextBox Grid.Row="2" Grid.Column="1" Text=""/>
+        <TextBox Grid.Row="3" Grid.Column="1" Text=""/>
+        <TextBox Grid.Row="4" Grid.Column="1" Text=""/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text=""/>
+        <TextBox Grid.Row="6" Grid.Column="1" Text=""/>
+        <ComboBox Grid.Row="7" Grid.Column="1"/>
+
+
+        <StackPanel Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Button Width="200" Height="40" Content="Изменить груз"/>
+        </StackPanel>
+    </Grid>
+</Window>

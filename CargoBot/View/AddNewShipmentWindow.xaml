@@ -1,0 +1,69 @@
+﻿<Window x:Class="CargoBot.View.AddNewShipmentWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CargoBot.View"
+        mc:Ignorable="d"
+        Title="Добавить груз" Height="500" Width="400"
+        Name="AddNewShipmentWnd">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="{x:Type TextBlock}" >
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Right"/>
+                <Setter Property="Margin" Value="10,0,20,0"/>
+            </Style>
+            <Style TargetType="{x:Type TextBox}" >
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="Margin" Value="20,0,20,0"/>
+            </Style>
+            <Style TargetType="{x:Type ComboBox}" >
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="HorizontalAlignment" Value="Stretch"/>
+                <Setter Property="Margin" Value="20,0,20,0"/>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Код клиента:"/>
+        <TextBlock Grid.Row="1" Grid.Column="0" Text="Наименование"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Text="Количество мест"/>
+        <TextBlock Grid.Row="3" Grid.Column="0" Text="Вес, кг"/>
+        <TextBlock Grid.Row="4" Grid.Column="0" Text="Объем, м3"/>
+        <TextBlock Grid.Row="5" Grid.Column="0" Text="Ставка"/>
+        <TextBlock Grid.Row="6" Grid.Column="0" Text="Дата поступления"/>
+        <TextBlock Grid.Row="7" Grid.Column="0" Text="Склад"/>
+
+        <TextBox Name="CodeBlock" Grid.Row="0" Grid.Column="1" Text="{Binding Client_code}"/>
+        <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding Name}"/>
+        <TextBox Name="PlaceBLock" Grid.Row="2" Grid.Column="1" Text="{Binding Place}"/>
+        <TextBox Name="WeightBLock" Grid.Row="3" Grid.Column="1" Text="{Binding Weight}"/>
+        <TextBox Name="ValueBLock" Grid.Row="4" Grid.Column="1" Text="{Binding Value}"/>
+        <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding Price}"/>
+        <TextBox Name="DateRecBLock" Grid.Row="6" Grid.Column="1" Text="{Binding DateRecieve}"/>
+        <ComboBox ItemsSource="{Binding AllWarehouses}" DisplayMemberPath="name"  Grid.Row="7" Grid.Column="1" SelectedItem="{Binding WarehouseId}"/>
+
+        <StackPanel Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <Button Width="200" Height="40" Content="Добавить груз" Command="{Binding AddNewShipment}"
+                    CommandParameter="{Binding ElementName=AddNewShipmentWnd}"/>
+        </StackPanel>
+    </Grid>
+</Window>
